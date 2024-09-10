@@ -29,6 +29,7 @@ class ValidateurTest extends TestCase
     {
         //Vérification de l'exeption
         $this->expectException(Exception::class);
+        $this->expectExceptionMessage("Le nombre doit etre positif");
         // Arrange
         $validateurr = new Validateur();
         $chiffre = -5;
