@@ -15,24 +15,24 @@ class ValidateurTest extends TestCase
     }
 
     public function testValidateurDeNombre1_Si_Chiffre_Est_Positif_TestJuste()
-{
-    // Arrange
-    $validateurr = new Validateur();
-    $chiffre = 7;
-    // Act
-    $resultat = $validateurr->verifieNombre($chiffre);
-    // Assert
-    $this->assertEquals(True, $resultat);
-}
+    {
+        // Arrange
+        $validateurr = new Validateur();
+        $chiffre = 7;
+        // Act
+        $resultat = $validateurr->verifieNombre($chiffre);
+        // Assert
+        $this->assertEquals(True, $resultat);
+    }
 
     public function testValidateurDeNombre2_Si_Chiffre_Est_Negatif_TestJuste()
-{
-    // Arrange
-    $validateurr = new Validateur();
-    $chiffre = -5;
-    // Act
-    $resultat = $validateurr->verifieNombre($chiffre);
-    // Assert
-    $this->assertEquals(False, $resultat);
-}
+    {
+        //Vérification de l'exeption
+        $this->expectException(Exception::class);
+        // Arrange
+        $validateurr = new Validateur();
+        $chiffre = -5;
+        // Act
+        $validateurr->verifieNombre2($chiffre);
+    }
 }
