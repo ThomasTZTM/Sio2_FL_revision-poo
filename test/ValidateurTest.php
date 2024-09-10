@@ -13,14 +13,16 @@ class ValidateurTest extends TestCase
         $this->validateur = new Validateur();
     }
 
-    public function testValidateur_ResultatJuste_TestFonctionnel()
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function validateur_ResultatJuste_TestFonctionnel()
     {
 
         // Assert
         $this->assertTrue(True);
     }
 
-    public function testValidateurDeNombre1_Si_Chiffre_Est_Positif_TestJuste()
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function validateurDeNombre1_Si_Chiffre_Est_Positif_TestJuste()
     {
         // Arrange
         $chiffre = 7;
