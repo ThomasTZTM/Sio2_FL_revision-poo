@@ -6,6 +6,12 @@ use PHPUnit\Framework\TestCase;
 
 class ValidateurTest extends TestCase
 {
+    private \App\Validateur $validateur;
+    protected function setUp() : void
+    {
+        // cette méthode est appelé lors de l'execution de chaque test
+        $this->validateur = new Validateur();
+    }
 
     public function testValidateur_ResultatJuste_TestFonctionnel()
     {
@@ -17,10 +23,9 @@ class ValidateurTest extends TestCase
     public function testValidateurDeNombre1_Si_Chiffre_Est_Positif_TestJuste()
     {
         // Arrange
-        $validateurr = new Validateur();
         $chiffre = 7;
         // Act
-        $resultat = $validateurr->verifieNombre($chiffre);
+        $resultat = $this->validateur->verifieNombre($chiffre);
         // Assert
         $this->assertEquals(True, $resultat);
     }
@@ -31,9 +36,8 @@ class ValidateurTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Le nombre doit etre positif");
         // Arrange
-        $validateurr = new Validateur();
         $chiffre = -5;
         // Act
-        $validateurr->verifieNombre2($chiffre);
+        $this->validateur->verifieNombre2($chiffre);
     }
 }
