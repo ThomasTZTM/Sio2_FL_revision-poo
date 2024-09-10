@@ -1,28 +1,34 @@
 <?php
 
+namespace Corbeille;
 class Acteur
 {
     private $nom;
     private $prenom;
 
-    function __construct($nom, $prenom){
+    function __construct($nom, $prenom)
+    {
         $this->nom = $nom;
         $this->prenom = $prenom;
     }
 
-    function getNom(){
+    function getNom()
+    {
         return $this->nom;
     }
 
-    function getPrenom(){
+    function getPrenom()
+    {
         return $this->prenom;
     }
 
-    function setNom($nom){
+    function setNom($nom)
+    {
         $this->nom = $nom;
     }
 
-    function setPrenom($prenom){
+    function setPrenom($prenom)
+    {
         $this->prenom = $prenom;
     }
 }

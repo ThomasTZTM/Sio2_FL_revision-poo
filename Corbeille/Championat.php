@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Corbeille;
 use App\Entite\Equipe;
 
 class Championat

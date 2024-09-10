@@ -1,5 +1,8 @@
 <?php
 
+use Corbeille\Acteur;
+use Corbeille\Film;
+
 require_once "../src/film.php";
 require_once "../src/acteur.php";
 

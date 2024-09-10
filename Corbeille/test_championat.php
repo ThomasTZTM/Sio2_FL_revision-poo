@@ -2,9 +2,9 @@
 
 require_once "./vendor/autoload.php";
 
-use App\Championat;
 use App\Entite\Equipe;
 use App\Personne;
+use Corbeille\Championat;
 
 $psg = new Equipe("PSG");
 $om = new Equipe("OM");
