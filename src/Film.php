@@ -51,7 +51,11 @@ class Film
     {
         $dateJour = new DateTime();
         $intervalle = $dateJour->diff($this->dateSortie);
-        return $intervalle->y;
+        if (!(($intervalle->y)==($dateJour-(($this->dateSortie)->y)))) {
+            throw new \Exception('La difference est pas correcte');
+        }else{
+            return $intervalle->y;
+        }
     }
 
     public function ajouteracteur(Acteur $acteur): bool
@@ -72,6 +76,10 @@ class Film
     public function getActeurs(): array
     {
         return $this->acteurs;
+    }
+
+    public function getAnciennete(): int{
+
     }
 
 
