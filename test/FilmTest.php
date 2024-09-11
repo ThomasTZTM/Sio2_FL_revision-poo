@@ -19,18 +19,32 @@ class FilmTest extends TestCase
         $this->film = new Film($titrePourTest, $realisateurPourTest, $datePourTest);
     }
 
+
     #[\PHPUnit\Framework\Attributes\Test]
-    public function ajouterActeur_Si_Acteur_Ajouter_Alors_TestJuste()
+    public function ajouterActeur_Si_ajout_fonctionne_alors_TestJuste()
     {
-        //Vérification de l'exeption
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessage("Pascal est porté disparue");
         // Arrange
         $acteurPourTest = new Acteur("Ramseyer", "Pascal");
         // Act
         $resultat=$this->film->ajouteracteur($acteurPourTest);
         $this->assertTrue($resultat);
     }
+
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function ajouterActeur2_Si_acteur_existe_deja_TestJuste()
+    {
+        //Vérification de l'exeption
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage("OOOOOO Pascal est déjà là ! grand fou");
+        // Arrange
+        $acteurPourTest = new Acteur("Ramseyer", "Pascal");
+        // Act
+        $resultat=$this->film->ajouteracteur($acteurPourTest);
+        $resultat=$this->film->ajouteracteur($acteurPourTest);
+    }
+
+
+
 
 
 }

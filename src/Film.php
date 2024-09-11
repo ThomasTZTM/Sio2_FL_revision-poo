@@ -56,23 +56,18 @@ class Film
 
     public function ajouteracteur(Acteur $acteur): bool
     {
+        if ( (in_array($acteur, $this->getActeurs()))  ) {
+            throw new \Exception('OOOOOO Pascal est déjà là ! grand fou');
+        }
         $this->acteurs[] = $acteur;
-        if ( !(in_array($this->getActeurs(), $this->acteurs)) ) {
+        if ( !(in_array($acteur, $this->getActeurs()))  ) {
             throw new \Exception('Pascal est porté disparue');
         }else{
             return true;
         }
     }
 
-    public function ajouteracteur2(Acteur $acteur): bool
-    {
-        $this->acteurs[] = $acteur;
-        if ( !(in_array($this->getActeurs(), $this->acteurs)) ) {
-            throw new \Exception('Pascal est porté disparue');
-        }else{
-            return true;
-        }
-    }
+
 
     public function getActeurs(): array
     {
