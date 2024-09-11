@@ -1,6 +1,8 @@
 <?php
 
-namespace Corbeille;
+namespace App;
+use PHPUnit\Framework\TestCase;
+use DateTime;
 
 class Film
 {
@@ -52,9 +54,24 @@ class Film
         return $intervalle->y;
     }
 
-    public function ajouteracteur(Acteur $acteur): void
+    public function ajouteracteur(Acteur $acteur): bool
     {
         $this->acteurs[] = $acteur;
+        if ( !(in_array($this->getActeurs(), $this->acteurs)) ) {
+            throw new \Exception('Pascal est porté disparue');
+        }else{
+            return true;
+        }
+    }
+
+    public function ajouteracteur2(Acteur $acteur): bool
+    {
+        $this->acteurs[] = $acteur;
+        if ( !(in_array($this->getActeurs(), $this->acteurs)) ) {
+            throw new \Exception('Pascal est porté disparue');
+        }else{
+            return true;
+        }
     }
 
     public function getActeurs(): array

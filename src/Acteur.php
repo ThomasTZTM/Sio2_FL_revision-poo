@@ -1,7 +1,9 @@
 <?php
 
-namespace Corbeille;
+namespace App;
+use PHPUnit\Framework\TestCase;
 class Acteur
+
 {
     private $nom;
     private $prenom;

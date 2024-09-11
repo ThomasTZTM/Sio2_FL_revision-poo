@@ -1,10 +1,10 @@
 <?php
 
-use Corbeille\Acteur;
-use Corbeille\Film;
+use App\Acteur;
+use App\Film;
 
-require_once "../src/film.php";
-require_once "../src/acteur.php";
+require_once "../src/Film.php";
+require_once "../src/Acteur.php";
 
 $film1 = new Film("Fast And Furious", "Rob Cohen", DateTime::createFromFormat("d/m/Y", "12/03/2003"));
 
